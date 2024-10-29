@@ -1,8 +1,14 @@
 from Bio import SeqIO
+import os
 
 # Define input file path and output file path
-input_file = r"your input file path"
-output_file = r"your output file path"
+input_file = input("Enter the path of the GenBank file: ")
+output_file = input("Enter the path of the output FASTA file (optional): ")
+
+# If output_file is not provided, use the same name as the input file with .fasta extension
+if not output_file:
+    base_name = os.path.splitext(os.path.basename(input_file))[0]
+    output_file = f"{base_name}.fasta"
 
 # Parse the GenBank file and save it as a FASTA file
 with open(output_file, "w") as fasta_file:
