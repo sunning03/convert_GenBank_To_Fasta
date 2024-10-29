@@ -1,0 +1,2 @@
+# convert_GenBank_To_Fasta
+从GenBank文件中提取基因组序列
